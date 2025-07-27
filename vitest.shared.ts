@@ -29,9 +29,10 @@ const config: UserConfig = {
     alias: {
       ...alias("cli"),
       ...alias("domain"),
-      ...alias("server"),
+      ...alias("api"),
       ...alias("database"),
       ...alias("shardManager"),
+      ...alias("workflow")
     }
   }
 }

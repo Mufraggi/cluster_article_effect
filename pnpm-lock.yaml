@@ -95,6 +95,18 @@ importers:
         specifier: ^2.0.5
         version: 2.1.9(@types/node@22.16.5)
 
+  packages/api:
+    dependencies:
+      '@effect/platform':
+        specifier: latest
+        version: 0.90.0(effect@3.17.2)
+      '@effect/platform-node':
+        specifier: latest
+        version: 0.94.0(@effect/cluster@0.46.0)(@effect/platform@0.90.0)(@effect/rpc@0.68.0)(@effect/sql@0.44.0)(effect@3.17.2)
+      effect:
+        specifier: latest
+        version: 3.17.2
+
   packages/cli:
     dependencies:
       '@effect/cli':
@@ -108,7 +120,7 @@ importers:
         version: 0.94.0(@effect/cluster@0.46.0)(@effect/platform@0.90.0)(@effect/rpc@0.68.0)(@effect/sql@0.44.0)(effect@3.17.2)
       '@template/database':
         specifier: workspace:^
-        version: link:../shardManager/dist
+        version: link:../database/dist
       '@template/domain':
         specifier: workspace:^
         version: link:../domain/dist
@@ -149,21 +161,6 @@ importers:
         version: 3.17.2
     publishDirectory: dist
 
-  packages/server:
-    dependencies:
-      '@effect/platform':
-        specifier: latest
-        version: 0.90.0(effect@3.17.2)
-      '@effect/platform-node':
-        specifier: latest
-        version: 0.94.0(@effect/cluster@0.46.0)(@effect/platform@0.90.0)(@effect/rpc@0.68.0)(@effect/sql@0.44.0)(effect@3.17.2)
-      '@template/domain':
-        specifier: workspace:^
-        version: link:../domain/dist
-      effect:
-        specifier: latest
-        version: 3.17.2
-
   packages/shardManager:
     dependencies:
       '@effect/cluster':
@@ -183,7 +180,32 @@ importers:
         version: 0.45.0(@effect/experimental@0.54.0)(@effect/platform@0.90.0)(@effect/sql@0.44.0)(effect@3.17.2)
       '@template/database':
         specifier: workspace:^
-        version: link:dist
+        version: link:../database/dist
+      effect:
+        specifier: latest
+        version: 3.17.2
+    publishDirectory: dist
+
+  packages/workflow:
+    dependencies:
+      '@effect/cluster':
+        specifier: ^0.46.0
+        version: 0.46.0(@effect/platform@0.90.0)(@effect/rpc@0.68.0)(@effect/sql@0.44.0)(@effect/workflow@0.8.1)(effect@3.17.2)
+      '@effect/platform':
+        specifier: latest
+        version: 0.90.0(effect@3.17.2)
+      '@effect/platform-node':
+        specifier: latest
+        version: 0.94.0(@effect/cluster@0.46.0)(@effect/platform@0.90.0)(@effect/rpc@0.68.0)(@effect/sql@0.44.0)(effect@3.17.2)
+      '@effect/workflow':
+        specifier: latest
+        version: 0.8.1(@effect/platform@0.90.0)(@effect/rpc@0.68.0)(effect@3.17.2)
+      '@template/database':
+        specifier: workspace:^
+        version: link:../database/dist
+      '@template/domain':
+        specifier: workspace:^
+        version: link:../domain/dist
       effect:
         specifier: latest
         version: 3.17.2
@@ -3214,6 +3236,7 @@ packages:
   /fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
+    requiresBuild: true
     dependencies:
       to-regex-range: 5.0.1
 
@@ -4830,6 +4853,7 @@ packages:
   /to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
+    requiresBuild: true
     dependencies:
       is-number: 7.0.0
 

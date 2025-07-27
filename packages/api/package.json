@@ -1,13 +1,13 @@
 {
-  "name": "@template/server",
+  "name": "@template/api",
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "description": "The server template",
+  "description": "The api template",
   "repository": {
     "type": "git",
     "url": "<PLACEHOLDER>",
-    "directory": "packages/server"
+    "directory": "packages/api"
   },
   "scripts": {
     "codegen": "build-utils prepare-v2",
@@ -22,7 +22,6 @@
   "dependencies": {
     "@effect/platform": "latest",
     "@effect/platform-node": "latest",
-    "@template/domain": "workspace:^",
     "effect": "latest"
   },
   "effect": {

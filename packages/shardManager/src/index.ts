@@ -1,2 +1,2 @@
 
-export * as ShardManager from "./bin.js"
+export * as bin from "./bin.js"

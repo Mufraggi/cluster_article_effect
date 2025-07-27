@@ -1,9 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
-  "include": ["test"],
+  "include": [
+    "test"
+  ],
   "references": [
-    { "path": "tsconfig.src.json" },
-    { "path": "../domain" }
+    { "path": "tsconfig.src.json"},
+    { "path": "../domain"},
+    { "path": "../workflow"}
   ],
   "compilerOptions": {
     "types": ["node"],
